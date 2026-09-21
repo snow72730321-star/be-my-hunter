@@ -8,6 +8,7 @@ PASS: appearance independent from combat
 PASS: drawback order hp and mp
 PASS: exclusive talent content granted
 PASS: MP reservation cannot overspend
+PASS: equipped sword accepts sword skill
 PASS: planning reserves but does not spend
 PASS: battle plan persisted
 PASS: playback save rejected
@@ -22,4 +23,20 @@ PASS: story rewards idempotent
 PASS: stagger schedules one future skipped turn
 PASS: morale separate from MP
 PASS: invalid save rejected atomically
-BMH_RULES_OK 22
+PASS: free equipment family 0 preserves character
+PASS: free equipment family 1 preserves character
+PASS: free equipment family 2 preserves character
+PASS: free equipment family 3 preserves character
+PASS: free equipment family 4 preserves character
+PASS: free equipment family 5 preserves character
+PASS: weapon compatibility follows current equipment
+PASS: discipline change restores own MP pool without refill
+PASS: returning discipline retains spent MP
+PASS: gate UI does not expose unknown mutation
+PASS: device support request recorded
+PASS: support request cannot duplicate rewards
+PASS: equipment change cannot invalidate active battle
+PASS: faster unopposed enemy acts before player
+PASS: talent birth prerequisites do not lock later build or saves
+PASS: equipment IDs remain compatible after JSON save/load
+BMH_RULES_OK 39
