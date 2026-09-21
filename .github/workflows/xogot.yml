@@ -27,7 +27,7 @@ jobs:
           unzip -q BMH_Xogot_Source.zip -d project
           /usr/bin/python3 -m fontTools.subset /usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc --font-number=1 --unicodes='U+0000-00FF,U+2000-26FF,U+3000-303F,U+3130-318F,U+AC00-D7A3' --output-file=project/assets/BMH_Korean.otf
           cp /usr/share/doc/fonts-noto-cjk/copyright project/assets/FONT-LICENSE.txt
-          mkdir -p qa preview-0.3.0
+          mkdir -p qa preview-0.4.0
       - name: Import and compile project
         run: |
           set -o pipefail
@@ -45,7 +45,7 @@ jobs:
           LIBGL_ALWAYS_SOFTWARE: '1'
         run: |
           set -o pipefail
-          timeout 150 xvfb-run -a -s '-screen 0 1280x720x24' Godot_v4.4.1-stable_linux.x86_64 --verbose --path project --rendering-method gl_compatibility --audio-driver Dummy -- --qa 2>&1 | tee qa/native.log
+          timeout 240 xvfb-run -a -s '-screen 0 1920x1440x24' Godot_v4.4.1-stable_linux.x86_64 --verbose --path project --rendering-method gl_compatibility --audio-driver Dummy -- --qa 2>&1 | tee qa/native.log
           grep -q 'BMH_NATIVE_UI_QA_OK' qa/native.log
           if grep -E 'SCRIPT ERROR|SHADER ERROR|ERROR:' qa/native.log; then exit 1; fi
       - name: Export Web preview and Xogot project
@@ -54,7 +54,7 @@ jobs:
           unzip -q /tmp/templates.zip -d /tmp/godot-templates
           mkdir -p "$HOME/.local/share/godot/export_templates/4.4.1.stable"
           cp /tmp/godot-templates/templates/web* "$HOME/.local/share/godot/export_templates/4.4.1.stable/"
-          Godot_v4.4.1-stable_linux.x86_64 --headless --path project --export-release Web ../preview-0.3.0/index.html
+          Godot_v4.4.1-stable_linux.x86_64 --headless --path project --export-release Web ../preview-0.4.0/index.html
           cd project
           zip -q -r ../BMH_Xogot_Play.zip . -x '.godot/*' '.github/*'
       - name: Upload validation results
@@ -70,6 +70,6 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add preview-0.3.0 qa BMH_Xogot_Play.zip
+          git add preview-0.4.0 qa BMH_Xogot_Play.zip
           git diff --cached --quiet || git commit -m 'Build native BMH Xogot preview and verified project'
           git push
