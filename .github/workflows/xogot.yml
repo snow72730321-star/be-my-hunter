@@ -45,7 +45,7 @@ jobs:
           LIBGL_ALWAYS_SOFTWARE: '1'
         run: |
           set -o pipefail
-          timeout 150 xvfb-run -a -s '-screen 0 1280x720x24' Godot_v4.4.1-stable_linux.x86_64 --path project --rendering-method gl_compatibility --audio-driver Dummy -- --qa 2>&1 | tee qa/native.log
+          timeout 150 xvfb-run -a -s '-screen 0 1280x720x24' Godot_v4.4.1-stable_linux.x86_64 --verbose --path project --rendering-method gl_compatibility --audio-driver Dummy -- --qa 2>&1 | tee qa/native.log
           grep -q 'BMH_NATIVE_UI_QA_OK' qa/native.log
           if grep -E 'SCRIPT ERROR|SHADER ERROR|ERROR:' qa/native.log; then exit 1; fi
       - name: Export Web preview and Xogot project
