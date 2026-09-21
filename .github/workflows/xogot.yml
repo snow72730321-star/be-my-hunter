@@ -1,0 +1,75 @@
+name: BMH Xogot build and native QA
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - BMH_Xogot_Source.zip
+      - .github/workflows/xogot.yml
+permissions:
+  contents: write
+concurrency:
+  group: bmh-xogot-build
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare Godot and Korean fonts
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1-mesa-dri fonts-noto-cjk python3-fonttools
+          wget -q https://github.com/godotengine/godot/releases/download/4.4.1-stable/Godot_v4.4.1-stable_linux.x86_64.zip -O /tmp/godot.zip
+          unzip -q /tmp/godot.zip -d /tmp/godot
+          chmod +x /tmp/godot/Godot_v4.4.1-stable_linux.x86_64
+          echo '/tmp/godot' >> "$GITHUB_PATH"
+          unzip -q BMH_Xogot_Source.zip -d project
+          pyftsubset /usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc --font-number=1 --unicodes='U+0000-00FF,U+2000-26FF,U+3000-303F,U+3130-318F,U+AC00-D7A3' --output-file=project/assets/BMH_Korean.otf
+          cp /usr/share/doc/fonts-noto-cjk/copyright project/assets/FONT-LICENSE.txt
+          mkdir -p qa preview-0.3.0
+      - name: Import and compile project
+        run: |
+          set -o pipefail
+          Godot_v4.4.1-stable_linux.x86_64 --headless --path project --editor --quit 2>&1 | tee qa/import.log
+          if grep -E 'SCRIPT ERROR|Parse Error|Compile Error' qa/import.log; then exit 1; fi
+      - name: Execute deterministic rules
+        run: |
+          set -o pipefail
+          timeout 90 Godot_v4.4.1-stable_linux.x86_64 --headless --path project --script res://tests/rules.gd 2>&1 | tee qa/rules.log
+          grep -q 'BMH_RULES_OK' qa/rules.log
+          if grep -E 'SCRIPT ERROR|FAIL:' qa/rules.log; then exit 1; fi
+      - name: Execute rendered native game
+        env:
+          BMH_QA_OUT: ${{ github.workspace }}/qa
+          LIBGL_ALWAYS_SOFTWARE: '1'
+        run: |
+          set -o pipefail
+          timeout 150 xvfb-run -a -s '-screen 0 1280x720x24' Godot_v4.4.1-stable_linux.x86_64 --path project --rendering-method gl_compatibility --audio-driver Dummy -- --qa 2>&1 | tee qa/native.log
+          grep -q 'BMH_NATIVE_UI_QA_OK' qa/native.log
+          if grep -E 'SCRIPT ERROR|SHADER ERROR|ERROR:' qa/native.log; then exit 1; fi
+      - name: Export Web preview and Xogot project
+        run: |
+          wget -q https://github.com/godotengine/godot/releases/download/4.4.1-stable/Godot_v4.4.1-stable_export_templates.tpz -O /tmp/templates.zip
+          unzip -q /tmp/templates.zip -d /tmp/godot-templates
+          mkdir -p "$HOME/.local/share/godot/export_templates/4.4.1.stable"
+          cp /tmp/godot-templates/templates/web* "$HOME/.local/share/godot/export_templates/4.4.1.stable/"
+          Godot_v4.4.1-stable_linux.x86_64 --headless --path project --export-release Web ../preview-0.3.0/index.html
+          cd project
+          zip -q -r ../BMH_Xogot_Play.zip . -x '.godot/*' '.github/*'
+      - name: Upload validation results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: BMH-Xogot-QA
+          path: |
+            qa/
+            BMH_Xogot_Play.zip
+          retention-days: 14
+      - name: Publish preview and screenshots
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add preview-0.3.0 qa BMH_Xogot_Play.zip
+          git diff --cached --quiet || git commit -m 'Build native BMH Xogot preview and verified project'
+          git push
