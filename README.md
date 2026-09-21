@@ -1,18 +1,15 @@
-# BE MY HUNTER — Xogot / Godot
+# Be My Hunter — Xogot / Godot 0.4
 
-서림, 2050. 3D 생활권 배경과 도트 캐릭터를 결합한 네이티브 2.5D RPG.
+[플레이·다운로드 페이지](https://snow72730321-star.github.io/be-my-hunter/)
 
-- [브라우저에서 플레이](https://snow72730321-star.github.io/be-my-hunter/)
-- [Xogot 프로젝트 다운로드](./BMH_Xogot_Play.zip)
-- [소스 프로젝트](./BMH_Xogot_Source.zip)
-- [실제 Godot 검사와 빌드 기록](https://github.com/snow72730321-star/be-my-hunter/actions/workflows/xogot.yml)
+`BMH_Xogot_Play.zip` 하나에 실행용 프로젝트와 전체 에셋이 들어 있습니다. 압축을 풀고 Xogot 또는 Godot 4.4 이상 표준 버전에서 `project.godot`를 여세요.
 
-Xogot에서는 ZIP을 파일 앱에서 풀고 `project.godot`를 가져와 실행하세요. 가로 화면 기준입니다. 외부 AI API나 별도 게임 서버는 필요하지 않습니다.
+이번 수정: 새 남녀 캐릭터·별도 전투 SD 도트, 비도트 2.5D 전투 배경, 텍스처가 있는 3D 거리, 새 커스터마이징과 전투 UI, 유동 조이스틱, 단말기 게이트 탭, 게임 중 자유로운 무기·계열 교체, 여섯 무기 모션과 기술별 변형, 실제 타격과 VFX/효과음 동기화.
 
-새로하기 / 이어하기 / 설정, 성인 캐릭터 외형·포인트 특성 선택, 직접 이동·대시·상호작용, 슬롯·합·코인 전투, 무기별 모션과 VFX, 정신력·흐트러짐, 애니메이션으로 펼쳐지는 헌터 디바이스, 세이브를 제공합니다.
+Godot 네이티브 검사: 규칙 39개, 생성·이동·장비·게이트·훈련·저장, 여섯 무기 타격 프레임, 16:9·19.5:9·4:3 화면. [실행 기록](https://github.com/snow72730321-star/be-my-hunter/actions/workflows/xogot.yml), `qa/`의 실제 캡처와 로그를 확인할 수 있습니다. iPhone Xogot 실기기와 모바일 성능은 아직 검증하지 않았습니다. 웹 내보내기를 제공하지만 검증용 브라우저가 WebGL2를 지원하지 않아 웹 수동 플레이 검사는 하지 못했습니다.
 
-현재 범위는 **첫 서림 생활권 시제품**입니다. 모든 장이 완성된 오픈월드가 아닙니다. 프롤로그와 1장 관련 구조·의료·대피·공략의 상태를 구현했습니다. 2장 이후·펫·옥션·전체 성장 체계는 이번 네이티브 버전에 포함되지 않습니다. 자세한 구현/참조 데이터/미검증 구분은 프로젝트의 `README.md`와 `docs/VALIDATION.md`에 있습니다.
+첫 서림 생활권 시제품입니다. 프롤로그·1장의 상태 변화와 기본 전투를 구현하며 장편 전체, 정착·펫, 옥션·세계 경제·후반 경지는 포함하지 않습니다. 원문의 전체 장 퀘스트 그래프는 참조 데이터입니다. BMH의 한 명 주인공과 직접 선택식 스킬덱을 유지하며, 림버스의 전체 파티·인격·EGO·공명 시스템을 복제한 버전은 아닙니다.
 
-Godot 4.4.1에서 규칙 22개와 실제 렌더링 시나리오를 실행합니다. 실제 iPhone Xogot 장치 검증은 아직 별도입니다. 캐릭터와 타이틀은 BMH용 생성형 원본 시제품 에셋이며, 건물과 적은 기본 3D 모델입니다. Limbus Company의 이미지·음원·캐릭터 파일을 사용하지 않습니다.
+개발용 원본은 전송 안정성을 위해 나눴습니다. `BMH_Xogot_Source.zip`을 푼 폴더에 `BMH_Art_01.zip`~`BMH_Art_05.zip`을 모두 풀면 같은 프로젝트가 됩니다. 일반 플레이어는 통합 `BMH_Xogot_Play.zip`만 받으면 됩니다. `.github/workflows/xogot.yml`이 실제 엔진에서 프로젝트를 검사하고 Web 및 통합 ZIP을 생성합니다.
 
-0.2 GDevelop 버전과 그 저장 형식은 별도로 남습니다. 0.3은 GDScript와 native scene graph로 다시 만들었습니다.
+이전 GDevelop 0.2와 Godot 0.3 자료는 보존합니다. GDevelop 저장 자동 변환은 제공하지 않습니다. Godot 0.3의 정상 저장은 추가 필드 기본값을 사용합니다.
