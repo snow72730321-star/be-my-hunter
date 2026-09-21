@@ -85,6 +85,7 @@ reimport: begin: (Re)Importing Assets steps: 20
 	reimport: step 14: dao.svg
 	reimport: step 15: city_facades.png
 	reimport: step 16: BMH_Korean.otf
+	reimport: step 17: weapons_detail.png
 	reimport: step 18: sword.svg
 	reimport: step 19: spear.svg
 	reimport: step 20: Finalizing Asset Import...
