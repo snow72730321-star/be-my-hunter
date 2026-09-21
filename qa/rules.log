@@ -1,0 +1,25 @@
+Godot Engine v4.4.1.stable.official.49a5bc7b6 - https://godotengine.org
+
+PASS: no drawbacks or positive traits required
+PASS: 24 point extreme build
+PASS: four drawbacks rejected
+PASS: over budget and incompatible discipline rejected
+PASS: appearance independent from combat
+PASS: drawback order hp and mp
+PASS: exclusive talent content granted
+PASS: MP reservation cannot overspend
+PASS: planning reserves but does not spend
+PASS: battle plan persisted
+PASS: playback save rejected
+PASS: full battle snapshot restored
+PASS: load does not reroll speed or change inventory
+PASS: same saved inputs same combat result
+PASS: time partition invariance
+PASS: scheduled story event timestamps independent of advance size
+PASS: entry mutation exactly once
+PASS: collapse preserves actually evacuated NPC
+PASS: story rewards idempotent
+PASS: stagger schedules one future skipped turn
+PASS: morale separate from MP
+PASS: invalid save rejected atomically
+BMH_RULES_OK 22

@@ -1,0 +1,81 @@
+WorkerThreadPool: 4 threads, 1 max low-priority.
+Godot Engine v4.4.1.stable.official.49a5bc7b6 - https://godotengine.org
+TextServer: Added interface "Dummy"
+TextServer: Added interface "ICU / HarfBuzz / Graphite (Built-in)"
+JoypadLinux: udev enabled and loaded successfully.
+Xshape 1.1 detected.
+Xinerama 1.1 detected.
+Xrandr 1.6 detected.
+Xrender 0.11 detected.
+Xinput 2.2 detected.
+XInput: Refreshing devices.
+XInput: No touch devices found.
+Detecting GPUs, set DRI_PRIME in the environment to override GPU detection logic.
+Only one GPU found, using default.
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:360)
+XcursorGetTheme could not get cursor theme
+Failed loading custom cursor: crossed_circle
+ScreenSaver: DBus 1.14.10 detected.
+PortalDesktop: DBus 1.14.10 detected.
+Using "default" pen tablet driver...
+Shader 'CanvasSdfShaderGLES3' SHA256: abf356c5c158e897c1737becd3e6532eb221c967f6121798daab7bfe96f2ce42
+Shader 'SkeletonShaderGLES3' SHA256: b724bbf96cb191c3ae0b22461482bd5d8f988f0884b3957c98bc8282be770042
+Shader 'ParticlesShaderGLES3' SHA256: e395289efaf6eb901f37fa52ee46789f3fed87c5d9721839dd1efbd72c3654f8
+Shader 'ParticlesCopyShaderGLES3' SHA256: 937b7c463fea7c1216a899efe1af174d744ae49c077911598b503ad50aaa5144
+Shader 'CopyShaderGLES3' SHA256: 6a2bf8b1292db1c73cc25aca16795116e02470781f7ea8a3a78269a1ec6aedbe
+Shader 'CubemapFilterShaderGLES3' SHA256: 15708463424337ab1a0751f98ac1ef0eb698999e583f9e560cd1564d8b7b71c3
+Shader 'GlowShaderGLES3' SHA256: 8f5fe5d3855cfde58ee491780c7ef8f87450649ccee7c499d11dac3127823727
+Shader 'PostShaderGLES3' SHA256: dcd0c5beff4e92862f5609421d3f9ce8263e4b20663b6c60ffd835bab5831750
+Shader 'FeedShaderGLES3' SHA256: 91c6c80fb626be963e0d35c9015450afdb94c21a9a5a724e204bb741159a3006
+Shader 'CanvasShaderGLES3' SHA256: bbcecc4702afc32d790a58e3f2c6aa58bfbcb4049806be26496d175c13306090
+Shader 'CanvasOcclusionShaderGLES3' SHA256: 6ae9571e2fd4347046b3e02c28910aa22c11964bfb6632690d8a04a5a3830b2d
+Shader 'SceneShaderGLES3' SHA256: 130825d923c05cae834d0444a57539831e331a9b7b143a981cdd729cc68806c0
+Shader 'SkyShaderGLES3' SHA256: bd00089bc3834b1edbd60c36bf38b6e3d243ed1ac650c4069193263898527d35
+OpenGL API 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.2 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 20.1.2, 256 bits)
+
+TextServer: Primary interface set to: "ICU / HarfBuzz / Graphite (Built-in)".
+Loading resource: res://default_bus_layout.tres
+CORE API HASH: 4052744068
+EDITOR API HASH: 910296392
+Loaded system CA certificates
+Loading resource: res://scenes/Main.tscn
+Loading resource: res://scripts/main.gd
+Loading resource: res://assets/BMH_Korean.otf
+Loading resource: res://.godot/imported/BMH_Korean.otf-06c51c1ab33a1ff1e2015c86276f9a62.fontdata
+Loading resource: res://shaders/hunter.gdshader
+Loading resource: res://assets/hunter_m.png
+Loading resource: res://.godot/imported/hunter_m.png-0f46d973e620c0f6aa7b6711a3f8b31b.ctex
+Loading resource: res://assets/fist.svg
+Loading resource: res://.godot/imported/fist.svg-35d0af23f7fca7a23307b27a88f95dcf.ctex
+Loading resource: res://assets/hunter_f.png
+Loading resource: res://.godot/imported/hunter_f.png-0f14e3c3afebaa453ebae7fc985119c4.ctex
+Loading resource: res://assets/night.wav
+Loading resource: res://.godot/imported/night.wav-9f6ab1f357073e2e58eaa8db88f401fe.sample
+Loading resource: res://assets/sword.svg
+Loading resource: res://.godot/imported/sword.svg-0278f4088c2d60d339c0e2ba123cb102.ctex
+Loading resource: res://assets/seorim_dusk.png
+Loading resource: res://.godot/imported/seorim_dusk.png-1fa6b5fcdb7357dc1c4b7b5056a1526f.ctex
+Loading resource: res://assets/katana.svg
+Loading resource: res://.godot/imported/katana.svg-16181246a1ca87f5f01baaca9a3038b4.ctex
+Loading resource: res://assets/hit.wav
+Loading resource: res://.godot/imported/hit.wav-094de5d7e9ff6457899262f6412d21e8.sample
+WARNING: Target object freed before starting, aborting Tweener.
+     at: start (scene/animation/tween.cpp:594)
+Loading resource: res://assets/clash.wav
+Loading resource: res://.godot/imported/clash.wav-904f174cee1985a7cc3d9dac67f09d40.sample
+Loading resource: res://assets/hit.wav
+Loading resource: res://.godot/imported/hit.wav-094de5d7e9ff6457899262f6412d21e8.sample
+Loading resource: res://assets/clash.wav
+Loading resource: res://.godot/imported/clash.wav-904f174cee1985a7cc3d9dac67f09d40.sample
+Loading resource: res://assets/hit.wav
+Loading resource: res://.godot/imported/hit.wav-094de5d7e9ff6457899262f6412d21e8.sample
+Loading resource: res://assets/hit.wav
+Loading resource: res://.godot/imported/hit.wav-094de5d7e9ff6457899262f6412d21e8.sample
+Loading resource: res://assets/hit.wav
+Loading resource: res://.godot/imported/hit.wav-094de5d7e9ff6457899262f6412d21e8.sample
+Loading resource: res://tests/compare.gd
+BMH_NATIVE_UI_QA_OK: menu, creation, appearance, movement, device tween, battle playback, training completion, atomic save/load
+XR: Clearing primary interface
+XR: Removed interface "Native mobile"
+XR: Removed interface "OpenXR"
