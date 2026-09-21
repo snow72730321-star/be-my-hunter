@@ -132,8 +132,12 @@ Loading resource: res://.godot/imported/hunter_sd_f.png-fcacc7491d9a1ebbc3d4ac6b
 Loading resource: res://shaders/impact.gdshader
 Loading resource: res://assets/hunter_sd_f.png
 Loading resource: res://.godot/imported/hunter_sd_f.png-fcacc7491d9a1ebbc3d4ac6be3cc2cd1.ctex
+WARNING: Target object freed before starting, aborting Tweener.
+     at: start (scene/animation/tween.cpp:594)
 Loading resource: res://assets/hunter_sd_f.png
 Loading resource: res://.godot/imported/hunter_sd_f.png-fcacc7491d9a1ebbc3d4ac6be3cc2cd1.ctex
+WARNING: Target object freed before starting, aborting Tweener.
+     at: start (scene/animation/tween.cpp:594)
 Loading resource: res://tests/compare.gd
 BMH_NATIVE_UI_QA_OK: menu, field/SD appearance, floating joystick, gates, equipment, six weapon motions, 16:9/19.5:9/4:3, clash playback, training, atomic save/load
 XR: Clearing primary interface
