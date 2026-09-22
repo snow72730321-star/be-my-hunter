@@ -65,6 +65,7 @@ Loading resource: res://.godot/imported/seorim_dusk.png-1fa6b5fcdb7357dc1c4b7b50
 Loading resource: res://scripts/ornament.gd
 Loading resource: res://assets/hunter_sd_f.png
 Loading resource: res://.godot/imported/hunter_sd_f.png-fcacc7491d9a1ebbc3d4ac6be3cc2cd1.ctex
+BMH_MOBILE_INPUT_OK: root STOP reproduces bug; real mouse/touch dispatch moves actor; release, cancel, second finger, dialog, portrait and landscape pass
 Loading resource: res://assets/hunter_sd_f.png
 Loading resource: res://.godot/imported/hunter_sd_f.png-fcacc7491d9a1ebbc3d4ac6be3cc2cd1.ctex
 Loading resource: res://scripts/battle_link.gd
@@ -135,7 +136,7 @@ Loading resource: res://.godot/imported/hunter_sd_f.png-fcacc7491d9a1ebbc3d4ac6b
 Loading resource: res://assets/hunter_sd_f.png
 Loading resource: res://.godot/imported/hunter_sd_f.png-fcacc7491d9a1ebbc3d4ac6be3cc2cd1.ctex
 Loading resource: res://tests/compare.gd
-BMH_NATIVE_UI_QA_OK: menu, field/SD appearance, floating joystick, gates, equipment, six weapon motions, 16:9/19.5:9/4:3, clash playback, training, atomic save/load
+BMH_NATIVE_UI_QA_OK: menu, field/SD appearance, viewport touch/mouse movement, release over HUD, modal blocking, portrait/landscape recovery, gates, equipment, six weapon motions, 16:9/19.5:9/4:3, clash playback, training, atomic save/load
 XR: Clearing primary interface
 XR: Removed interface "Native mobile"
 XR: Removed interface "OpenXR"
